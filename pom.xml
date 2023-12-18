@@ -10,18 +10,21 @@
 
     <modules>
         <module>hiver-core</module>
+        <module>hiver-spring-boot-starter</module>
     </modules>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
-        <spring-boot.version>2.7.0</spring-boot.version>
-        <mybatis-plus.version>3.5.3.2</mybatis-plus.version>
-        <mysql.version>8.0.32</mysql.version>
-        <maven-surefire-plugin.version>3.1.2</maven-surefire-plugin.version>
-        <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
+        <spring-boot.version>2.7.18</spring-boot.version>
+        <mybatis-plus.version>3.5.4.1</mybatis-plus.version>
+        <mysql.version>8.0.33</mysql.version>
+        <druid.version>1.2.20</druid.version>
+        <maven-surefire-plugin.version>3.2.3</maven-surefire-plugin.version>
+        <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
         <lombok.version>1.18.30</lombok.version>
         <mapstruct.version>1.5.5.Final</mapstruct.version>
+        <knife4j.version>4.4.0</knife4j.version>
         <hiver.version>1.0-SNAPSHOT</hiver.version>
     </properties>
 
@@ -34,6 +37,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <!-- MyBatis Plus -->
             <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-boot-starter</artifactId>
@@ -49,14 +53,33 @@
                 <artifactId>mybatis-plus-extension</artifactId>
                 <version>${mybatis-plus.version}</version>
             </dependency>
+            <!-- Druid 数据库连接池 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+            <!-- MySQL 驱动 -->
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql.version}</version>
             </dependency>
+            <!-- knife4j Swagger增强API文档 -->
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-openapi3-spring-boot-starter</artifactId>
+                <version>${knife4j.version}</version>
+            </dependency>
+            <!-- Hiver -->
             <dependency>
                 <groupId>plus.hiver</groupId>
                 <artifactId>hiver-core</artifactId>
+                <version>${hiver.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>plus.hiver</groupId>
+                <artifactId>hiver-spring-boot-starter</artifactId>
                 <version>${hiver.version}</version>
             </dependency>
         </dependencies>
